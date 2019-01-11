@@ -1,0 +1,1674 @@
+[
+  {
+    "level": 1,
+    "id": 0,
+    "prompt": "list files in the current directory",
+    "answer": "ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 1,
+    "id": 1,
+    "prompt": "change directory it to 'temp' directory",
+    "answer": "cd temp",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 1,
+    "id": 2,
+    "prompt": "change directory up one directory",
+    "answer": "cd ..",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 1,
+    "id": 3,
+    "prompt": "change directory to home directory for current user",
+    "answer": "cd ~",
+    "answer2": "cd",
+    "answered": 0
+  },
+  {
+    "level": 1,
+    "id": 4,
+    "prompt": "change directory back to previous directory",
+    "answer": "cd -",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 1,
+    "id": 5,
+    "prompt": "make a directory called 'temp'",
+    "answer": "mkdir temp",
+    "answer2": "mkdir temp",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 0,
+    "prompt": "display contents of file 'test 1' to standard output",
+    "answer": "cat test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 1,
+    "prompt": "display contents of file 'test 1' including endlines, tabs, and non printing characters to standard output",
+    "answer": "cat -A test1",
+    "answer2": "cat -vET test1",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 2,
+    "prompt": "display contents of files 'test1' and 'test2' to standard out",
+    "answer": "cat test1 test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 3,
+    "prompt": "display contents of 'test1' to standard out with line numbering",
+    "answer": "cat -n test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 4,
+    "prompt": "write contents of file 'test1' into file 'test2'",
+    "answer": "cat test1 > test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 2,
+    "id": 5,
+    "prompt": "write standard in to a file 'test2'",
+    "answer": "cat > test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 3,
+    "id": 0,
+    "prompt": "copy file 'test1' to a new file called 'test2'",
+    "answer": "cp test1 test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 3,
+    "id": 1,
+    "prompt": "copy contents of directory 'dir1' to new directory 'dir2'",
+    "answer": "cp -r dir1 dir2",
+    "answer2": "cp -R dir1 dir2",
+    "answered": 0
+  },
+  {
+    "level": 3,
+    "id": 2,
+    "prompt": "copy all files inside 'dir1' into existing directory 'dir2'",
+    "answer": "cp dir1/* dir2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 3,
+    "id": 3,
+    "prompt": "copy file 'test1' over existing file 'test2' only if test1 is newer than test2",
+    "answer": "cp -u test1 test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 3,
+    "id": 4,
+    "prompt": "copy files 'test1' to 'test2' while displaying all lines copied",
+    "answer": "cp -v test1 test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 4,
+    "id": 0,
+    "prompt": "move file named 'test1' to a new file named 'test3' (ie rename file)",
+    "answer": "mv test1 test3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 4,
+    "id": 1,
+    "prompt": "move file named 'test1' to a  file named 'test3' (ie rename file), but do not overwrite if 'test3' exists",
+    "answer": "mv -n test1 test3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 4,
+    "id": 2,
+    "prompt": "move file named 'test1' to file named 'test4' while outputting verbosely",
+    "answer": "mv -v test1 test4",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 4,
+    "id": 3,
+    "prompt": "move directory 'dir1' to a new directory named 'dir3'",
+    "answer": "mv dir1 dir3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 4,
+    "id": 4,
+    "prompt": "move file named 'test1' to file named 'test2' but only if test1 is newer than test2",
+    "answer": "mv -u test1 test2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 5,
+    "id": 0,
+    "prompt": "create a file called 'test' in the current working directory",
+    "answer": "touch test",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 5,
+    "id": 1,
+    "prompt": "Create 26 new files in the current working directory named alphabetically A through Z",
+    "answer": "touch {A..Z}",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 5,
+    "id": 2,
+    "prompt": "Update the access and modification time of file 'test1' to current time",
+    "answer": "touch test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 5,
+    "id": 3,
+    "prompt": "Update access and modification time of all files and folders in the current working directory",
+    "answer": "touch *",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 0,
+    "prompt": "Delete (unlink name from filesystem) a file called 'test1' in the current working directory",
+    "answer": "rm test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 1,
+    "prompt": "Delete (unlink name from file system) a directory called 'dir1' in the current working directory",
+    "answer": "rm -r dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 2,
+    "prompt": "Overwrite file named 'test1' in current working directory so it cannot be recovered",
+    "answer": "shred test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 3,
+    "prompt": "Delete (unlink name from file system) a file called 'test1' while printing actions to stdout",
+    "answer": "rm -v",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 4,
+    "prompt": "Delete (unlink name from file system) a file called 'test1' with prompting before deletion",
+    "answer": "rm -i test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 6,
+    "id": 5,
+    "prompt": "Delete (unlink name from file system) a directory called 'dir1' in the current working directory, do not ask before deleting write protected files",
+    "answer": "rm -rf dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 0,
+    "prompt": "change attributes of file 'test1' to add write protection (made need superuser permissions)",
+    "answer": "chattr +i test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 1,
+    "prompt": "List file attributes of the file 'test1'",
+    "answer": "lsattr test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 2,
+    "prompt": "List attributes of contents of current working directory",
+    "answer": "lsattr",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 3,
+    "prompt": "change attributes of file 'test1' to add append only protection (made need superuser permissions)",
+    "answer": "chattr +a test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 4,
+    "prompt": "change attributes of file 'test1' to remove append only protection (made need superuser permissions)",
+    "answer": "chattr -a test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 5,
+    "prompt": "change attributes of the directory 'dir1' to make write protected (made need superuser permissions)",
+    "answer": "chattr +i dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 7,
+    "id": 6,
+    "prompt": "change attributes of the directory 'dir1' to remove write protection (made need superuser permissions)",
+    "answer": "chattr -i dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 8,
+    "id": 0,
+    "prompt": "output name of current user",
+    "answer": "whoami",
+    "answer2": "logname",
+    "answered": 0
+  },
+  {
+    "level": 8,
+    "id": 1,
+    "prompt": "output name and group information of current user",
+    "answer": "id",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 8,
+    "id": 2,
+    "prompt": "output name of current users logged in to the system",
+    "answer": "w",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 8,
+    "id": 3,
+    "prompt": "output current time and how long the system has been running",
+    "answer": "uptime",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 8,
+    "id": 4,
+    "prompt": "display message 'hello' to all users currently logged in to the system",
+    "answer": "wall hello",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 0,
+    "prompt": "display the UNIX manual page for the program ls (then quit manual with 'q')",
+    "answer": "man ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 1,
+    "prompt": "display the GNU info page for the program ls (then quit)",
+    "answer": "info ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 2,
+    "prompt": "display the pathname of the file(program) which would run if you typed ls",
+    "answer": "which ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 3,
+    "prompt": "display simply one line description of behavior of program 'ls'",
+    "answer": "whatis ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 4,
+    "prompt": "display the manual page for the manual itself",
+    "answer": "man man",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 5,
+    "prompt": "display the manual page for C standard library function 'fopen' (Not a terminal command)",
+    "answer": "man 3 fopen",
+    "answer2": "man fopen",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 6,
+    "prompt": "display the manual page for terminal command 'printf'",
+    "answer": "man printf",
+    "answer2": "Man 1 printf",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 7,
+    "prompt": "display the manual page for the C standard library function 'printf' (not the terminal command)",
+    "answer": "man 3 printf",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 9,
+    "id": 8,
+    "prompt": "display the manual page for the Linux system call 'open' (note the OS syscall, not terminal or C stdlib)",
+    "answer": "man 2 open",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 10,
+    "id": 0,
+    "prompt": "display the current date and time on the system",
+    "answer": "date",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 10,
+    "id": 1,
+    "prompt": "display the current epoch time in seconds (seconds since January 1st, 1970)",
+    "answer": "date +%s",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 10,
+    "id": 2,
+    "prompt": "use date command to convert current epoch time in seconds to a date",
+    "answer": "date -d @",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 10,
+    "id": 3,
+    "prompt": "display calendar of events for the current month",
+    "answer": "calendar",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 11,
+    "id": 0,
+    "prompt": "check what type of file 'test1' is (ASCII, elf etc)",
+    "answer": "file test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 11,
+    "id": 1,
+    "prompt": "check what type of files all files in the current directory are",
+    "answer": "file *",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 11,
+    "id": 2,
+    "prompt": "check what type of files all files in the '/boot' directory are",
+    "answer": "file boot*",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 0,
+    "prompt": "create a tar archive from file 'test1' called 'test1.tar' using flags for create mode, verbose and specifying file name",
+    "answer": "tar -cvf test1.tar test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 1,
+    "prompt": "check the file type of file named 'test1.tar'",
+    "answer": "file test1.tar",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 2,
+    "prompt": "extract to current directory contents of tar archive called 'test1.tar' using verbose flag",
+    "answer": "tar -xvf test1.tar",
+    "answer2": "tar -xf test1.tar",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 3,
+    "prompt": "extract contents of tar archive called 'test1.tar' to stdout (may be disallowed)",
+    "answer": "tar -xv test1.tar",
+    "answer2": "tar -xvf – test1.tar",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 4,
+    "prompt": "create archive of directory 'dir1' called 'dir1.tar' in verbose mode",
+    "answer": "tar -cvf dir1.tar dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 5,
+    "prompt": "use tar to create a gzip archive from file 'test1' called 'test1.tar.gz' using flags for create mode, verbose and specifying file name",
+    "answer": "tar -cvzf test1.tar.gz test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 6,
+    "prompt": "use tar to extract gzip archive from file called 'test1.tar.gz' using verbose mode",
+    "answer": "tar -xvf test1.tar.gz",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 12,
+    "id": 7,
+    "prompt": "use tar to list contents of archive called 'test1.tar.gz'",
+    "answer": "tar -tvf test1.tar.gz",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 0,
+    "prompt": "display 'hello' to the stdout",
+    "answer": "echo 'hello'",
+    "answer2": "echo hello",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 1,
+    "prompt": "display 'hello' to stdout without automatic newline added",
+    "answer": "echo -n 'hello'",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 2,
+    "prompt": "declare a local variable x and set it equal to 10",
+    "answer": "x=10",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 3,
+    "prompt": "echo the value of the variable x",
+    "answer": "echo $x",
+    "answer2": "echo “$x”",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 4,
+    "prompt": "echo the return value of the last program run",
+    "answer": "echo $?",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 5,
+    "prompt": "echo to the terminal the control character represented by '\\x03'",
+    "answer": "echo -e '\\x03'",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 6,
+    "prompt": "use echo to print names of all files in the current directory (like ls –color=never)",
+    "answer": "echo *",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 7,
+    "prompt": "use echo to print names of files that end with .tar in current directory",
+    "answer": "echo *.tar",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 13,
+    "id": 8,
+    "prompt": "use echo to display the contents of your PATH variable",
+    "answer": "echo $PATH",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 0,
+    "prompt": "display the usage of disk capacity for all currently mounted filsystems",
+    "answer": "df",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 1,
+    "prompt": "display the usage of disk capacity in human readable format",
+    "answer": "df -h",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 2,
+    "prompt": "display usage of inodes capacity in the filesystem",
+    "answer": "df -i",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 3,
+    "prompt": "display usage of disk capacity for all currently mounted filesystems along with file system type",
+    "answer": "df -T",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 4,
+    "prompt": "list all files that are currently open on the system",
+    "answer": "lsof",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 14,
+    "id": 5,
+    "prompt": "display all system configuration variables",
+    "answer": "getconf -a",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 0,
+    "prompt": "display the value of all environmental variables for the current environment",
+    "answer": "env",
+    "answer2": "printenv",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 1,
+    "prompt": "execute the command 'ls' with all environmental variables turned off",
+    "answer": "env -i ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 2,
+    "prompt": "echo an environmental variable for the shell used",
+    "answer": "echo $SHELL",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 3,
+    "prompt": "set an environmental variable for the session to 'MYVAR=10'",
+    "answer": "export MYVAR=10",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 4,
+    "prompt": "echo the value of MYVAR to terminal",
+    "answer": "echo $MYVAR",
+    "answer2": "echo “$MYVAR”",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 5,
+    "prompt": "remove the variable MYVAR from the current environment",
+    "answer": "unset MYVAR",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 6,
+    "prompt": "use export to display all variables declared in the current environment",
+    "answer": "export -p",
+    "answer2": "export",
+    "answered": 0
+  },
+  {
+    "level": 15,
+    "id": 7,
+    "prompt": "display all local variables and function declarations",
+    "answer": "set",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 0,
+    "prompt": "print the last 10 lines of file 'longfile' to standard out",
+    "answer": "tail longfile",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 1,
+    "prompt": "print the last 20 lines of file 'longfile' to standard out",
+    "answer": "tail -n 20 longfile",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 2,
+    "prompt": "continually check the last 10 lines of the file 'longfile' and print changes (Ctrl + C to exit)",
+    "answer": "tail -f longfile",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 3,
+    "prompt": "clear the terminal window",
+    "answer": "clear",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 4,
+    "prompt": "list the files in the system log files directory  (in ubuntu check /var/log )",
+    "answer": "ls /var/log",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 16,
+    "id": 5,
+    "prompt": "print the last 10 lines of the syslog file",
+    "answer": "tail /var/log/syslog",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 0,
+    "prompt": "write the output of the command 'man grep' to a file called test1",
+    "answer": "man grep > test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 1,
+    "prompt": "search and print all lines in file test1 in which the word shell occurs",
+    "answer": "grep shell test1",
+    "answer2": "grep “shell” test1",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 2,
+    "prompt": "copy file test1 to new file test2 and search all files in directory for word shell",
+    "answer": "grep shell *",
+    "answer2": "grep shell test1 test2",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 3,
+    "prompt": "search and print all lines in file test1 in which the word manual occurs ignoring case",
+    "answer": "grep -i manual test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 4,
+    "prompt": "search and print all lines in file test1 which do NOT contain the word grep",
+    "answer": "grep -v grep test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 5,
+    "prompt": "search and print all lines in file test1 which match anything (.*)",
+    "answer": "grep .* test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 6,
+    "prompt": "search all files (but not subdirectories) in directory dir1 for word shell",
+    "answer": "grep shell dir1/*",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 7,
+    "prompt": "search directory dir1 and its subdirectories for word shell",
+    "answer": "grep -r shell dir1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 8,
+    "prompt": "print the number of occurrences of the word shell in file test1",
+    "answer": "grep -c shell test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 17,
+    "id": 9,
+    "prompt": "search and print all lines along with line numbers which contain the word shell in test1",
+    "answer": "grep -n shell test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 18,
+    "id": 0,
+    "prompt": "print the version of the Linux kernel you are using",
+    "answer": "uname -r",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 18,
+    "id": 1,
+    "prompt": "print all information available about system kernel and hardware platform",
+    "answer": "uname -a",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 18,
+    "id": 2,
+    "prompt": "print the system hostname as it would appear in a DNS server",
+    "answer": "hostname",
+    "answer2": "uname -n",
+    "answered": 0
+  },
+  {
+    "level": 18,
+    "id": 3,
+    "prompt": "run the command ls as superuser (ok if this command fails if you do not have root password)",
+    "answer": "sudo ls",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 18,
+    "id": 4,
+    "prompt": "type the command you would use to become superuser (ok to fail if you do not have root password)",
+    "answer": "sudo su",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 0,
+    "prompt": "show the current process status for active processes in the current shell",
+    "answer": "ps",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 1,
+    "prompt": "show the current process status for all processes on the system",
+    "answer": "ps -A",
+    "answer2": "ps -e",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 2,
+    "prompt": "show the current system processes in a tree format (ie showing parent child relationships)",
+    "answer": "ps -e --forest",
+    "answer2": "ps -A --forest",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 3,
+    "prompt": "show the current system processes in order of %mem they are using",
+    "answer": "ps -e --sort=%mem",
+    "answer2": "ps -A | grep sys",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 4,
+    "prompt": "search and print processes which contain the substring sys",
+    "answer": "ps -e | grep sys",
+    "answer2": "ps -A | grep sys",
+    "answered": 0
+  },
+  {
+    "level": 19,
+    "id": 5,
+    "prompt": "lookup process id (PID) by name for processes including string sys",
+    "answer": "pgrep sys",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 0,
+    "prompt": "run program to page through syslog (/var/log/syslog), then type q to quit",
+    "answer": "less /var/sys/log",
+    "answer2": "more /var/sys/log",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 1,
+    "prompt": "run program to page through syslong (/var/log/syslog) as a background process (use space between all terms)",
+    "answer": "less /var/sys/log &",
+    "answer2": "more /var/sys/log &",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 2,
+    "prompt": "Print current background jobs",
+    "answer": "jobs",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 3,
+    "prompt": "NOTE - jobs may not have man or info pages, enter another way to check jobs command options",
+    "answer": "jobs --help",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 4,
+    "prompt": "Print current background jobs along with PID",
+    "answer": "jobs -l",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 5,
+    "prompt": "Send an signal to the background job to kill it using its job# ( %1)",
+    "answer": "kill %1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 6,
+    "prompt": "Again run program to page through syslong (/var/log/syslog) as a background process (use space between all terms)",
+    "answer": "less /var/sys/log &",
+    "answer2": "more /var/sys/log &",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 7,
+    "prompt": "Get the PID of the background job you ran using pgrep",
+    "answer": "pgrep less",
+    "answer2": "pgrep more",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 8,
+    "prompt": "Send a SIGKILL signal to that PID to kill the job",
+    "answer": "kill -9",
+    "answer2": "kill -s SIGKILL",
+    "answered": 0
+  },
+  {
+    "level": 20,
+    "id": 9,
+    "prompt": "List all possible signals that can be sent to processes using the kill command",
+    "answer": "kill -l",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 0,
+    "prompt": "create a file called 'test3' in the current working directory by running man ls > test3",
+    "answer": "man ls > test1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 1,
+    "prompt": "run command to print number of lines, words, and bytes in file test3",
+    "answer": "wc test3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 2,
+    "prompt": "run command to print only the number of lines in file test3",
+    "answer": "wc -l test3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 3,
+    "prompt": "run command to print only the number of words in file test3",
+    "answer": "wc -w test3",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 4,
+    "prompt": "run this command to generate a copy of test3 with line numbers added named test4 cat -n test3 > test4",
+    "answer": "cat -n test3 > test4",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 5,
+    "prompt": "print a sorted (default sorting) output of test4",
+    "answer": "sort test4",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 6,
+    "prompt": "print a sorted (sort by numerical value) output of test4",
+    "answer": "sort -g test4",
+    "answer2": "sort -n test4",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 7,
+    "prompt": "print a reversed sort by numerical value of test4",
+    "answer": "sort -rg test4",
+    "answer2": "sort -rn test4",
+    "answered": 0
+  },
+  {
+    "level": 21,
+    "id": 8,
+    "prompt": "check if file test4 is sorted using the sort command",
+    "answer": "sort -c test4",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 0,
+    "prompt": "run a command to repeatedly print “hello” to the screen until stopped with Ctrl+C",
+    "answer": "yes hello",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 1,
+    "prompt": "run a command to repeatedly print “hello” to the screen and then send to background while it is running",
+    "answer": "yes hello",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 2,
+    "prompt": "bring back that job that was stopped into the foreground (ie controlling the terminal), then stop with Ctrl + C",
+    "answer": "fg %1",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 3,
+    "prompt": "run a command to check the location of the program that will run if you type 'yes'",
+    "answer": "which yes",
+    "answer2": "whereis yes",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 4,
+    "prompt": "print that binary file to stdout as if it were normal text (use absolute file paths)",
+    "answer": "cat /usr/bin/yes",
+    "answer2": "cat /usr/bin/yes",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 5,
+    "prompt": "print only the human readable (ie ascii text) strings in that binary file to stdout",
+    "answer": "strings /usr/bin/yes",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 6,
+    "prompt": "print only the human readable (ie ascii text) strings in that binary file to a file called 'yes'",
+    "answer": "strings /usr/bin/yes",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 7,
+    "prompt": "print the human readable (ie ascii text) strings in that binary file to a file called 'yes2', removing duplicate lines",
+    "answer": "strings /usr/bin/yes | sort | uniq",
+    "answer2": "strings /usr/bin/yes | sort -u",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 8,
+    "prompt": "print lines where files yes and yes2 differ",
+    "answer": "diff yes yes2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 22,
+    "id": 9,
+    "prompt": "print lines where files yes and yes2 differ in side by side view",
+    "answer": "diff -y yes yes2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 0,
+    "prompt": "display information about your cpu",
+    "answer": "lscpu",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 1,
+    "prompt": "display information about system hardware (note- restricted if not superuser)",
+    "answer": "lshw",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 2,
+    "prompt": "display information about block devices on your system",
+    "answer": "lsblk",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 3,
+    "prompt": "display information about block devices on your system with file system type",
+    "answer": "lsblk -f",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 4,
+    "prompt": "display information about address ranges of available memory",
+    "answer": "lsmem",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 5,
+    "prompt": "display information about pci devices on the system",
+    "answer": "lspci",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 6,
+    "prompt": "display information about usb devices on the system",
+    "answer": "lsusb",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 7,
+    "prompt": "run program to display real-time process by resource usage",
+    "answer": "top",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 8,
+    "prompt": "display the size on disk of a directory named dir1",
+    "answer": "du",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 9,
+    "prompt": "display the side on disk of a directory named dir1 in human readable format",
+    "answer": "du -h",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 10,
+    "prompt": "display the size on disk of all files and directories in the current folder in human readable format",
+    "answer": "du * -h",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 11,
+    "prompt": "display the size on disk of contents of /home as a single number",
+    "answer": "du -s /home",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 12,
+    "prompt": "display the time it takes to run the command to display size of /home as a summary",
+    "answer": "time du -s /home",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 13,
+    "prompt": "display the current usage of system memory",
+    "answer": "free",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 23,
+    "id": 14,
+    "prompt": "display the current usage of system memory in human readable format",
+    "answer": "free -h",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 0,
+    "prompt": "search and list all files in the /home directory whose filename ends with the extension .db",
+    "answer": "find /home -name *.db",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 1,
+    "prompt": "search and list files in the current directory for a file or folder matching dir2",
+    "answer": "find . -name dir2",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 2,
+    "prompt": "search and list all files in the home directory whose size is 5MB or greater",
+    "answer": "find /home -size +5M",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 3,
+    "prompt": "search and list all files in the home directory which are executable",
+    "answer": "find /home -executable",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 4,
+    "prompt": "search and find all files or folders in the current directory matching 'dir', then execute command cat on them",
+    "answer": "find . dir -exec cat {} \\;",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 5,
+    "prompt": "search and list files in the /home directory that are empty",
+    "answer": "find /home -empty",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 6,
+    "prompt": "search and find all files or folders ending in .jpg  using locate database",
+    "answer": "locate test",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 7,
+    "prompt": "create a new empty file called 'test5' in current directory",
+    "answer": "touch test5",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 8,
+    "prompt": "search in locate database for file test5",
+    "answer": "locate test5",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 9,
+    "prompt": "run command to update locate database to reflect most recent information (note may require superuser)",
+    "answer": "updatedb",
+    "answer2": "sudo updatedb",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 10,
+    "prompt": "search in locate database for file test5",
+    "answer": "locate test5",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 11,
+    "prompt": "search locate database for all shell scripts (file extension .sh) and print only number found",
+    "answer": "locate -c *.sh",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 24,
+    "id": 12,
+    "prompt": "search locate database using regular expression /test$ to match only exact filename test",
+    "answer": "locate -r /test$",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 25,
+    "id": 0,
+    "prompt": "list all currently defined command aliases",
+    "answer": "alias",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 26,
+    "id": 0,
+    "prompt": "create a temporary (only for this session) alias so that typing 'long' runs the command 'ls -al'",
+    "answer": "alias long='ls -al'",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 26,
+    "id": 1,
+    "prompt": "create a (only for this session) alias so that typing 'back' runs the command 'cd -' (returns you to previous directory)",
+    "answer": "alias back='cd -'",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 26,
+    "id": 2,
+    "prompt": "create a temporary (only for this session) alias so that typing 'lsf' runs the commands 'ls -al' AND lsattr",
+    "answer": "alias lsf='ls -al; lsattr'",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 27,
+    "id": 0,
+    "prompt": "remove alias defined for lsf",
+    "answer": "unalias lsf",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 28,
+    "id": 0,
+    "prompt": "enter command to change your user password, (then type Enter twice to cancel password change)",
+    "answer": "passwd",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 28,
+    "id": 1,
+    "prompt": "enter command to indicate your user password status",
+    "answer": "passwd -S",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 28,
+    "id": 2,
+    "prompt": "enter the command to create a new user (will fail unless superuser)",
+    "answer": "adduser",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 0,
+    "prompt": "enter command to print file test6 with all lowercase letters translated to upper case",
+    "answer": "cat test6 | tr “[a-z]” “[A-Z]”",
+    "answer2": "cat test6 | tr [a-z] [A-Z]",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 1,
+    "prompt": "enter command to print file test6 with all letters upper and lower case shifted by 13 places (format n-za-mN-ZA-M)",
+    "answer": "cat test6 | tr a-zA-Z n-za-mN-ZA-M",
+    "answer2": "cat test6 | tr a-zA-Z n-za-mN-ZA-M",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 2,
+    "prompt": "enter command to print file test6 with all parentheses changed to brackets {}",
+    "answer": "cat test6 | tr '()' '{}'",
+    "answer2": "cat test6 | tr '()' '{}'",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 3,
+    "prompt": "enter command to print file test6 with all digits removed (format [:digit:] )",
+    "answer": "cat test6 | tr -d [:digit:]",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 4,
+    "prompt": "enter command to print file test6 with only digits remaining (the complement set of the last command)",
+    "answer": "cat test6 | tr -cd [:digit:]",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 5,
+    "prompt": "print a sequence of numbers 1 to 15",
+    "answer": "seq 15",
+    "answer2": "echo {1..15}",
+    "answered": 0
+  },
+  {
+    "level": 29,
+    "id": 6,
+    "prompt": "print a sequence of numbers 1 to 15 on a single line (single space in between)",
+    "answer": "seq -s “ “ 15",
+    "answer2": "echo {1..15}",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 0,
+    "prompt": "print information on your current private ip address",
+    "answer": "ip addr",
+    "answer2": "ip address",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 1,
+    "prompt": "ping the server at google.com continuously",
+    "answer": "ping google.com",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 2,
+    "prompt": "ping the server at google.com only twice",
+    "answer": "ping -c 2 google.com",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 3,
+    "prompt": "ping the server at amazon.com with an audible alert",
+    "answer": "ping -a amazon.com",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 4,
+    "prompt": "check DNS server to get the ip address of google.com",
+    "answer": "nslookup google.com",
+    "answer2": "dig google.com",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 5,
+    "prompt": "run utility to display list of open socket connections",
+    "answer": "ss",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 6,
+    "prompt": "display list of listening socket connections",
+    "answer": "ss -l",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 7,
+    "prompt": "display list of tcp listening socket connections",
+    "answer": "ss -lt",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 8,
+    "prompt": "display list of socket connections along with process using them",
+    "answer": "ss -p",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 9,
+    "prompt": "use command to download page at address http://google.com",
+    "answer": "wget http://google.com",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 10,
+    "prompt": "use command to download all entries found in file download.txt",
+    "answer": "wget -i download.txt",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 11,
+    "prompt": "use telnet protocol to connect to freechess.org port 5000",
+    "answer": "telnet freechess.org 5000",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 30,
+    "id": 12,
+    "prompt": "try to use ssh protocol to connect to freechess.org port 5000 as user",
+    "answer": "ssh user@freechess.org -p 5000",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 0,
+    "prompt": "print all the commands you have entered at the command line",
+    "answer": "history",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 1,
+    "prompt": "repeat the last command you entered (note - not using arrow functionality)",
+    "answer": "!!",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 2,
+    "prompt": "repeat the last command you entered as the superuser",
+    "answer": "sudo !!",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 3,
+    "prompt": "search the history command output for “passwd”",
+    "answer": "history | grep passwd",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 4,
+    "prompt": "start a program listening for traffic on port 1234",
+    "answer": "nc -l 1234",
+    "answer2": "",
+    "answered": 0
+  },
+  {
+    "level": 31,
+    "id": 5,
+    "prompt": "enter command to send messages to localhost (127.0.0.1) port 1234",
+    "answer": "nc 127.0.0.1 1234",
+    "answer2": "nc localhost 1234",
+    "answered": 0
+  }
+]

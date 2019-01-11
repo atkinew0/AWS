@@ -1,0 +1,210 @@
+level,id,prompt,answer,answer2,answered
+1,0,list files in the current directory,ls,,0
+1,1,change directory it to 'temp' directory,cd temp,,0
+1,2,change directory up one directory,cd ..,,0
+1,3,change directory to home directory for current user,cd ~,cd,0
+1,4,change directory back to previous directory,cd -,,0
+1,5,make a directory called 'temp',mkdir temp,mkdir temp,0
+2,0,display contents of file 'test 1' to standard output,cat test1,,0
+2,1,"display contents of file 'test 1' including endlines, tabs, and non printing characters to standard output",cat -A test1,cat -vET test1,0
+2,2,display contents of files 'test1' and 'test2' to standard out,cat test1 test2,,0
+2,3,display contents of 'test1' to standard out with line numbering,cat -n test1,,0
+2,4,write contents of file 'test1' into file 'test2',cat test1 > test2,,0
+2,5,write standard in to a file 'test2',cat > test2,,0
+3,0,copy file 'test1' to a new file called 'test2',cp test1 test2,,0
+3,1,copy contents of directory 'dir1' to new directory 'dir2',cp -r dir1 dir2,cp -R dir1 dir2,0
+3,2,copy all files inside 'dir1' into existing directory 'dir2',cp dir1/* dir2,,0
+3,3,copy file 'test1' over existing file 'test2' only if test1 is newer than test2,cp -u test1 test2,,0
+3,4,copy files 'test1' to 'test2' while displaying all lines copied,cp -v test1 test2,,0
+4,0,move file named 'test1' to a new file named 'test3' (ie rename file),mv test1 test3,,0
+4,1,"move file named 'test1' to a  file named 'test3' (ie rename file), but do not overwrite if 'test3' exists",mv -n test1 test3,,0
+4,2,move file named 'test1' to file named 'test4' while outputting verbosely,mv -v test1 test4,,0
+4,3,move directory 'dir1' to a new directory named 'dir3',mv dir1 dir3,,0
+4,4,move file named 'test1' to file named 'test2' but only if test1 is newer than test2,mv -u test1 test2,,0
+5,0,create a file called 'test' in the current working directory,touch test,,0
+5,1,Create 26 new files in the current working directory named alphabetically A through Z ,touch {A..Z},,0
+5,2,Update the access and modification time of file 'test1' to current time,touch test1,,0
+5,3,Update access and modification time of all files and folders in the current working directory,touch *,,0
+6,0,Delete (unlink name from filesystem) a file called 'test1' in the current working directory,rm test1,,0
+6,1,Delete (unlink name from file system) a directory called 'dir1' in the current working directory,rm -r dir1,,0
+6,2,Overwrite file named 'test1' in current working directory so it cannot be recovered,shred test1,,0
+6,3,Delete (unlink name from file system) a file called 'test1' while printing actions to stdout,rm -v,,0
+6,4,Delete (unlink name from file system) a file called 'test1' with prompting before deletion,rm -i test1,,0
+6,5,"Delete (unlink name from file system) a directory called 'dir1' in the current working directory, do not ask before deleting write protected files",rm -rf dir1,,0
+7,0,change attributes of file 'test1' to add write protection (made need superuser permissions),chattr +i test1,,0
+7,1,List file attributes of the file 'test1',lsattr test1,,0
+7,2,List attributes of contents of current working directory,lsattr,,0
+7,3,change attributes of file 'test1' to add append only protection (made need superuser permissions),chattr +a test1,,0
+7,4,change attributes of file 'test1' to remove append only protection (made need superuser permissions),chattr -a test1,,0
+7,5,change attributes of the directory 'dir1' to make write protected (made need superuser permissions),chattr +i dir1,,0
+7,6,change attributes of the directory 'dir1' to remove write protection (made need superuser permissions),chattr -i dir1,,0
+8,0,output name of current user,whoami,logname,0
+8,1,output name and group information of current user,id,,0
+8,2,output name of current users logged in to the system,w,,0
+8,3,output current time and how long the system has been running,uptime,,0
+8,4,display message 'hello' to all users currently logged in to the system,wall hello,,0
+9,0,display the UNIX manual page for the program ls (then quit manual with 'q'),man ls,,0
+9,1,display the GNU info page for the program ls (then quit),info ls,,0
+9,2,display the pathname of the file(program) which would run if you typed ls,which ls,,0
+9,3,display simply one line description of behavior of program 'ls',whatis ls,,0
+9,4,display the manual page for the manual itself,man man,,0
+9,5,display the manual page for C standard library function 'fopen' (Not a terminal command),man 3 fopen,man fopen,0
+9,6,display the manual page for terminal command 'printf',man printf,Man 1 printf,0
+9,7,display the manual page for the C standard library function 'printf' (not the terminal command),man 3 printf,,0
+9,8,"display the manual page for the Linux system call 'open' (note the OS syscall, not terminal or C stdlib)",man 2 open,,0
+10,0,display the current date and time on the system,date,,0
+10,1,"display the current epoch time in seconds (seconds since January 1st, 1970)",date +%s,,0
+10,2,use date command to convert current epoch time in seconds to a date,date -d @,,0
+10,3,display calendar of events for the current month,calendar,,0
+11,0,"check what type of file 'test1' is (ASCII, elf etc)",file test1,,0
+11,1,check what type of files all files in the current directory are,file *,,0
+11,2,check what type of files all files in the '/boot' directory are,file boot*,,0
+12,0,"create a tar archive from file 'test1' called 'test1.tar' using flags for create mode, verbose and specifying file name",tar -cvf test1.tar test1,,0
+12,1,check the file type of file named 'test1.tar',file test1.tar,,0
+12,2,extract to current directory contents of tar archive called 'test1.tar' using verbose flag,tar -xvf test1.tar,tar -xf test1.tar,0
+12,3,extract contents of tar archive called 'test1.tar' to stdout (may be disallowed),tar -xv test1.tar,tar -xvf – test1.tar,0
+12,4,create archive of directory 'dir1' called 'dir1.tar' in verbose mode,tar -cvf dir1.tar dir1,,0
+12,5,"use tar to create a gzip archive from file 'test1' called 'test1.tar.gz' using flags for create mode, verbose and specifying file name",tar -cvzf test1.tar.gz test1,,0
+12,6,use tar to extract gzip archive from file called 'test1.tar.gz' using verbose mode,tar -xvf test1.tar.gz,,0
+12,7,use tar to list contents of archive called 'test1.tar.gz',tar -tvf test1.tar.gz,,0
+13,0,display 'hello' to the stdout,echo 'hello',echo hello,0
+13,1,display 'hello' to stdout without automatic newline added,echo -n 'hello',,0
+13,2,declare a local variable x and set it equal to 10,x=10,,0
+13,3,echo the value of the variable x,echo $x,echo “$x”,0
+13,4,echo the return value of the last program run,echo $?,,0
+13,5,echo to the terminal the control character represented by '\x03',echo -e '\x03',,0
+13,6,use echo to print names of all files in the current directory (like ls –color=never),echo *,,0
+13,7,use echo to print names of files that end with .tar in current directory,echo *.tar,,0
+13,8,use echo to display the contents of your PATH variable,echo $PATH,,0
+14,0,display the usage of disk capacity for all currently mounted filsystems,df,,0
+14,1,display the usage of disk capacity in human readable format,df -h,,0
+14,2,display usage of inodes capacity in the filesystem,df -i,,0
+14,3,display usage of disk capacity for all currently mounted filesystems along with file system type,df -T,,0
+14,4,list all files that are currently open on the system,lsof,,0
+14,5,display all system configuration variables ,getconf -a,,0
+15,0,display the value of all environmental variables for the current environment,env,printenv,0
+15,1,execute the command 'ls' with all environmental variables turned off,env -i ls,,0
+15,2,echo an environmental variable for the shell used,echo $SHELL,,0
+15,3,set an environmental variable for the session to 'MYVAR=10',export MYVAR=10,,0
+15,4,echo the value of MYVAR to terminal,echo $MYVAR,echo “$MYVAR”,0
+15,5,remove the variable MYVAR from the current environment,unset MYVAR,,0
+15,6,use export to display all variables declared in the current environment,export -p,export,0
+15,7,display all local variables and function declarations,set,,0
+16,0,print the last 10 lines of file 'longfile' to standard out,tail longfile,,0
+16,1,print the last 20 lines of file 'longfile' to standard out,tail -n 20 longfile,,0
+16,2,continually check the last 10 lines of the file 'longfile' and print changes (Ctrl + C to exit),tail -f longfile,,0
+16,3,clear the terminal window,clear,,0
+16,4,list the files in the system log files directory  (in ubuntu check /var/log ),ls /var/log,,0
+16,5,print the last 10 lines of the syslog file,tail /var/log/syslog,,0
+17,0,write the output of the command 'man grep' to a file called test1,man grep > test1,,0
+17,1,search and print all lines in file test1 in which the word shell occurs,grep shell test1,grep “shell” test1,0
+17,2,copy file test1 to new file test2 and search all files in directory for word shell,grep shell *,grep shell test1 test2,0
+17,3,search and print all lines in file test1 in which the word manual occurs ignoring case,grep -i manual test1,,0
+17,4,search and print all lines in file test1 which do NOT contain the word grep,grep -v grep test1,,0
+17,5,search and print all lines in file test1 which match anything (.*),grep .* test1,,0
+17,6,search all files (but not subdirectories) in directory dir1 for word shell,grep shell dir1/*,,0
+17,7,search directory dir1 and its subdirectories for word shell,grep -r shell dir1,,0
+17,8,print the number of occurrences of the word shell in file test1,grep -c shell test1,,0
+17,9,search and print all lines along with line numbers which contain the word shell in test1,grep -n shell test1,,0
+18,0,print the version of the Linux kernel you are using,uname -r,,0
+18,1,print all information available about system kernel and hardware platform,uname -a,,0
+18,2,print the system hostname as it would appear in a DNS server,hostname,uname -n,0
+18,3,run the command ls as superuser (ok if this command fails if you do not have root password),sudo ls,,0
+18,4,type the command you would use to become superuser (ok to fail if you do not have root password),sudo su,,0
+19,0,show the current process status for active processes in the current shell,ps,,0
+19,1,show the current process status for all processes on the system,ps -A,ps -e,0
+19,2,show the current system processes in a tree format (ie showing parent child relationships),ps -e --forest,ps -A --forest,0
+19,3,show the current system processes in order of %mem they are using,ps -e --sort=%mem,ps -A | grep sys,0
+19,4,search and print processes which contain the substring sys,ps -e | grep sys,ps -A | grep sys,0
+19,5,lookup process id (PID) by name for processes including string sys,pgrep sys,,0
+20,0,"run program to page through syslog (/var/log/syslog), then type q to quit",less /var/sys/log,more /var/sys/log,0
+20,1,run program to page through syslong (/var/log/syslog) as a background process (use space between all terms),less /var/sys/log &,more /var/sys/log &,0
+20,2,Print current background jobs,jobs,,0
+20,3,"NOTE - jobs may not have man or info pages, enter another way to check jobs command options",jobs --help,,0
+20,4,Print current background jobs along with PID,jobs -l,,0
+20,5,Send an signal to the background job to kill it using its job# ( %1),kill %1,,0
+20,6,Again run program to page through syslong (/var/log/syslog) as a background process (use space between all terms),less /var/sys/log &,more /var/sys/log &,0
+20,7,Get the PID of the background job you ran using pgrep,pgrep less,pgrep more,0
+20,8,Send a SIGKILL signal to that PID to kill the job,kill -9,kill -s SIGKILL,0
+20,9,List all possible signals that can be sent to processes using the kill command,kill -l,,0
+21,0,create a file called 'test3' in the current working directory by running man ls > test3,man ls > test1,,0
+21,1,"run command to print number of lines, words, and bytes in file test3",wc test3,,0
+21,2,run command to print only the number of lines in file test3,wc -l test3,,0
+21,3,run command to print only the number of words in file test3,wc -w test3,,0
+21,4,run this command to generate a copy of test3 with line numbers added named test4 cat -n test3 > test4,cat -n test3 > test4,,0
+21,5,print a sorted (default sorting) output of test4,sort test4,,0
+21,6,print a sorted (sort by numerical value) output of test4,sort -g test4,sort -n test4,0
+21,7,print a reversed sort by numerical value of test4,sort -rg test4,sort -rn test4,0
+21,8,check if file test4 is sorted using the sort command,sort -c test4,,0
+22,0,run a command to repeatedly print “hello” to the screen until stopped with Ctrl+C,yes hello,,0
+22,1,run a command to repeatedly print “hello” to the screen and then send to background while it is running,yes hello,,0
+22,2,"bring back that job that was stopped into the foreground (ie controlling the terminal), then stop with Ctrl + C",fg %1,,0
+22,3,run a command to check the location of the program that will run if you type 'yes',which yes,whereis yes,0
+22,4,print that binary file to stdout as if it were normal text (use absolute file paths),cat /usr/bin/yes,cat /usr/bin/yes,0
+22,5,print only the human readable (ie ascii text) strings in that binary file to stdout,strings /usr/bin/yes,,0
+22,6,print only the human readable (ie ascii text) strings in that binary file to a file called 'yes',strings /usr/bin/yes,,0
+22,7,"print the human readable (ie ascii text) strings in that binary file to a file called 'yes2', removing duplicate lines",strings /usr/bin/yes | sort | uniq,strings /usr/bin/yes | sort -u,0
+22,8,print lines where files yes and yes2 differ,diff yes yes2,,0
+22,9,print lines where files yes and yes2 differ in side by side view,diff -y yes yes2,,0
+23,0,display information about your cpu,lscpu,,0
+23,1,display information about system hardware (note- restricted if not superuser),lshw,,0
+23,2,display information about block devices on your system,lsblk,,0
+23,3,display information about block devices on your system with file system type,lsblk -f,,0
+23,4,display information about address ranges of available memory,lsmem,,0
+23,5,display information about pci devices on the system,lspci,,0
+23,6,display information about usb devices on the system,lsusb,,0
+23,7,run program to display real-time process by resource usage,top,,0
+23,8,display the size on disk of a directory named dir1,du,,0
+23,9,display the side on disk of a directory named dir1 in human readable format,du -h,,0
+23,10,display the size on disk of all files and directories in the current folder in human readable format,du * -h,,0
+23,11,display the size on disk of contents of /home as a single number,du -s /home,,0
+23,12,display the time it takes to run the command to display size of /home as a summary,time du -s /home,,0
+23,13,display the current usage of system memory,free,,0
+23,14,display the current usage of system memory in human readable format,free -h,,0
+24,0,search and list all files in the /home directory whose filename ends with the extension .db,find /home -name *.db,,0
+24,1,search and list files in the current directory for a file or folder matching dir2,find . -name dir2,,0
+24,2,search and list all files in the home directory whose size is 5MB or greater,find /home -size +5M,,0
+24,3,search and list all files in the home directory which are executable,find /home -executable,,0
+24,4,"search and find all files or folders in the current directory matching 'dir', then execute command cat on them",find . dir -exec cat {} \;,,0
+24,5,search and list files in the /home directory that are empty,find /home -empty,,0
+24,6,search and find all files or folders ending in .jpg  using locate database ,locate test,,0
+24,7,create a new empty file called 'test5' in current directory,touch test5,,0
+24,8,search in locate database for file test5,locate test5,,0
+24,9,run command to update locate database to reflect most recent information (note may require superuser),updatedb,sudo updatedb,0
+24,10,search in locate database for file test5,locate test5,,0
+24,11,search locate database for all shell scripts (file extension .sh) and print only number found,locate -c *.sh,,0
+24,12,search locate database using regular expression /test$ to match only exact filename test,locate -r /test$,,0
+25,0,list all currently defined command aliases,alias,,0
+26,0,create a temporary (only for this session) alias so that typing 'long' runs the command 'ls -al',alias long='ls -al',,0
+26,1,create a (only for this session) alias so that typing 'back' runs the command 'cd -' (returns you to previous directory),alias back='cd -',,0
+26,2,create a temporary (only for this session) alias so that typing 'lsf' runs the commands 'ls -al' AND lsattr,alias lsf='ls -al; lsattr',,0
+27,0,remove alias defined for lsf,unalias lsf,,0
+28,0,"enter command to change your user password, (then type Enter twice to cancel password change)",passwd,,0
+28,1,enter command to indicate your user password status,passwd -S,,0
+28,2,enter the command to create a new user (will fail unless superuser),adduser,,0
+29,0,enter command to print file test6 with all lowercase letters translated to upper case,cat test6 | tr “[a-z]” “[A-Z]”,cat test6 | tr [a-z] [A-Z],0
+29,1,enter command to print file test6 with all letters upper and lower case shifted by 13 places (format n-za-mN-ZA-M),cat test6 | tr a-zA-Z n-za-mN-ZA-M,cat test6 | tr a-zA-Z n-za-mN-ZA-M,0
+29,2,enter command to print file test6 with all parentheses changed to brackets {},cat test6 | tr '()' '{}',cat test6 | tr '()' '{}',0
+29,3,enter command to print file test6 with all digits removed (format [:digit:] ),cat test6 | tr -d [:digit:],,0
+29,4,enter command to print file test6 with only digits remaining (the complement set of the last command),cat test6 | tr -cd [:digit:],,0
+29,5,print a sequence of numbers 1 to 15,seq 15,echo {1..15},0
+29,6,print a sequence of numbers 1 to 15 on a single line (single space in between),seq -s “ “ 15,echo {1..15},0
+30,0,print information on your current private ip address,ip addr,ip address,0
+30,1,ping the server at google.com continuously,ping google.com,,0
+30,2,ping the server at google.com only twice,ping -c 2 google.com,,0
+30,3,ping the server at amazon.com with an audible alert,ping -a amazon.com,,0
+30,4,check DNS server to get the ip address of google.com,nslookup google.com,dig google.com,0
+30,5,run utility to display list of open socket connections,ss,,0
+30,6,display list of listening socket connections,ss -l,,0
+30,7,display list of tcp listening socket connections,ss -lt,,0
+30,8,display list of socket connections along with process using them,ss -p,,0
+30,9,use command to download page at address http://google.com,wget http://google.com,,0
+30,10,use command to download all entries found in file download.txt,wget -i download.txt,,0
+30,11,use telnet protocol to connect to freechess.org port 5000,telnet freechess.org 5000,,0
+30,12,try to use ssh protocol to connect to freechess.org port 5000 as user,ssh user@freechess.org -p 5000,,0
+31,0,print all the commands you have entered at the command line,history,,0
+31,1,repeat the last command you entered (note - not using arrow functionality),!!,,0
+31,2,repeat the last command you entered as the superuser,sudo !!,,0
+31,3,search the history command output for “passwd”,history | grep passwd,,0
+31,4,start a program listening for traffic on port 1234,nc -l 1234,,0
+31,5,enter command to send messages to localhost (127.0.0.1) port 1234,nc 127.0.0.1 1234,nc localhost 1234,0

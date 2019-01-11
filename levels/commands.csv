@@ -1,0 +1,88 @@
+level,prompt,answer,answer2,answered,id
+2,display contents of file ‘test 1’ to standard output,cat test1,,FALSE,1
+2,"display contents of file ‘test 1’ including endlines, tabs, and non printing characters to standard output",cat -A test1,cat -vET test1,FALSE,2
+2,display contents of files ‘test1’ and ‘test2’ to standard out,cat test1 test2,,FALSE,3
+2,display contents of ‘test1’ to standard out with line numbering,cat -n test1,,FALSE,4
+2,write contents of file ‘test1’ into file ‘test2’,cat test1 > test2,,FALSE,5
+2,write standard in to a file ‘test2’,cat > test2,,FALSE,6
+3,copy file ‘test1’ to a new file called ‘test2’,cp test1 test2,,FALSE,1
+3,copy contents of directory ‘dir1’ to new directory ‘dir2’,cp -r dir1 dir2,cp -R dir1 dir2,FALSE,2
+3,copy all files inside ‘dir1’ into existing directory ‘dir2’,cp dir1/* dir2,,FALSE,3
+3,copy file ‘test1’ over existing file ‘test2’ only if test1 is newer than test2,cp -u test1 test2,,FALSE,4
+3,copy files ‘test1’ to ‘test2’ while displaying all lines copied,cp -v test1 test2,,FALSE,5
+4,move file named ‘test1’ to a new file named ‘test3’ (ie rename file),mv test1 test3,,FALSE,1
+4,"move file named ‘test1’ to a  file named ‘test3’ (ie rename file), but do not overwrite if ‘test3’ exists",mv -n test1 test3,,FALSE,2
+4,move file named ‘test1’ to file named ‘test4’ while outputting verbosely,mv -v test1 test4,,FALSE,3
+4,move directory ‘dir1’ to a new directory named ‘dir3’,mv dir1 dir3,,FALSE,4
+4,move file named ‘test1’ to file named ‘test2’ but only if test1 is newer than test2,mv -u test1 test2,,FALSE,5
+5,create a file called ‘test’ in the current working directory,touch test,,FALSE,1
+5,Create 26 new files in the current working directory named alphabetically A through Z ,touch {A..Z},,FALSE,2
+5,Update the access and modification time of file ‘test1’ to current time,touch test1,,FALSE,3
+5,Update access and modification time of all files and folders in the current working directory,touch *,,FALSE,4
+6,Delete (unlink name from filesystem) a file called ‘test1’ in the current working directory,rm test1,,FALSE,1
+6,Delete (unlink name from file system) a directory called ‘dir1’ in the current working directory,rm -r dir1,,FALSE,2
+6,Overwrite file named ‘test1’ in current working directory so it cannot be recovered,shred test1,,FALSE,3
+6,Delete (unlink name from file system) a file called ‘test1’ while printing actions to stdout,rm -v,,FALSE,4
+6,Delete (unlink name from file system) a file called ‘test1’ with prompting before deletion,rm -i test1,,FALSE,5
+6,"Delete (unlink name from file system) a directory called ‘dir1’ in the current working directory, do not ask before deleting write protected files",rm -rf dir1,,FALSE,6
+7,change attributes of file ‘test1’ to add write protection (made need superuser permissions),chattr +i test1,,FALSE,1
+7,List attributed of the file ‘test1’,lsattr test1,,FALSE,2
+7,List attributes of contents of current working directory,lsattr,,FALSE,3
+7,change attributes of file ‘test1’ to add append only protection (made need superuser permissions),chattr +a test1,,FALSE,4
+7,change attributes of file ‘test1’ to remove append only protection (made need superuser permissions),chattr -a test1,,FALSE,5
+7,change attributes of the directory ‘dir1’ to make write protected (made need superuser permissions),chattr +i dir1,,FALSE,6
+7,change attributes of the directory ‘dir1’ to remove write protection (made need superuser permissions),chattr -i dir1,,FALSE,7
+8,output name of current user,whoami,logname,FALSE,1
+8,output name and group information of current user,id,,FALSE,2
+8,output name of current users logged in to the system,w,,FALSE,3
+8,output current time and how long the system has been running,uptime,,FALSE,4
+8,display message ‘hello’ to all users currently logged in to the system,wall hello,,FALSE,5
+9,display the UNIX manual page for the program ls (then quit manual with ‘q’),man ls,,FALSE,1
+9,display the GNU info page for the program ls (then quit),info ls,,FALSE,2
+9,display the pathname of the file(program) which would run if you typed ls,which ls,,FALSE,3
+9,display simply one line description of behavior of program ‘ls’,whatis ls,,FALSE,4
+9,display the manual page for the manual itself,man man,,FALSE,5
+9,display the manual page for C standard library function ‘fopen’ (Not a terminal command),man 3 fopen,man fopen,FALSE,6
+9,display the manual page for terminal command ‘printf’,man printf,Man 1 printf,FALSE,7
+9,display the manual page for the C standard library function ‘printf’ (not the terminal command),man 3 printf,,FALSE,8
+10,"display the manual page for the Linux system call ‘open’ (note the OS syscall, not terminal or C stdlib)",man 2 open,,FALSE,1
+10,display the current date and time on the system,date,,FALSE,2
+10,display calendar for the current month,calendar,,FALSE,3
+11,"check what type of file ‘test1’ is (ASCII, elf etc)",file test1,,FALSE,1
+11,check what type of files all files in the current directory are,file *,,FALSE,2
+11,check what type of files all files in the ‘/boot’ directory are,file boot*,,FALSE,3
+12,"create a tar archive from file ‘test1’ called ‘test1.tar’ using flags for create mode, verbose and specifying file name",tar -cvf test1.tar test1,,FALSE,1
+12,check the file type of file named ‘test1.tar’,file test1.tar,,FALSE,2
+12,extract to current directory contents of tar archive called ‘test1.tar’ using verbose flag,tar -xvf test1.tar,tar -xf test1.tar,FALSE,3
+12,extract contents of tar archive called ‘test1.tar’ to stdout (may be disallowed),tar -xv test1.tar,tar -xvf – test1.tar,FALSE,4
+12,create archive of directory ‘dir1’ called ‘dir1.tar’ in verbose mode,tar -cvf dir1.tar dir1,,FALSE,5
+12,"use tar to create a gzip archive from file ‘test1’ called ‘test1.tar.gz’ using flags for create mode, verbose and specifying file name",tar -cvzf test1.tar.gz test1,,FALSE,6
+12,use tar to extract gzip archive from file called ‘test1.tar.gz’ using verbose mode,tar -xvf test1.tar.gz,,FALSE,7
+12,use tar to list contents of archive called ‘test1.tar.gz’,tar -tvf test1.tar.gz,,FALSE,8
+13,display ‘hello’ to the stdout,echo ‘hello’,echo hello,FALSE,1
+13,display ‘hello’ to stdout without automatic newline added,echo -n ‘hello’,,FALSE,2
+13,declare a local variable x and set it equal to 10,x=10,,FALSE,3
+13,echo the value of the variable x,echo $x,echo “$x”,FALSE,4
+13,echo the return value of the last program run,echo $?,,FALSE,5
+13,echo to the terminal the control character represented by ‘\x03’,echo -e ‘\x03’,,FALSE,6
+13,use echo to print names of all files in the current directory (like ls –color=never),echo *,,FALSE,7
+13,use echo to print names of files that end with .tar in current directory,echo *.tar,,FALSE,8
+13,use echo to display the contents of your PATH variable,echo $PATH,,FALSE,9
+14,display the usage of disk capacity for all currently mounted filsystems,df,,FALSE,1
+14,display the usage of disk capacity in human readable format,df -h,,FALSE,2
+14,display usage of inodes capacity in the filesystem,df -i,,FALSE,3
+14,display usage of disk capacity for all currently mounted filesystems along with file system type,df -T,,FALSE,4
+15,display the value of all environmental variables for the current environment,env,printenv,FALSE,1
+15,execute the command ‘ls’ with all environmental variables turned off,env -i ls,,FALSE,2
+15,echo an environmental variable for the shell used,echo $SHELL,,FALSE,3
+15,set an environmental variable for the session to ‘MYVAR=10’,export MYVAR=10,,FALSE,4
+15,echo the value of MYVAR to terminal,echo $MYVAR,echo “$MYVAR”,FALSE,5
+15,remove the variable MYVAR from the current environment,unset MYVAR,,FALSE,6
+15,use export to display all variables declared in the current environment,export -p,export,FALSE,7
+15,display all local variables and function declarations,set,,FALSE,8
+16,print the last 10 lines of file ‘longfile’ to standard out,tail longfile,,FALSE,1
+16,print the last 20 lines of file ‘longfile’ to standard out,tail -n 20 longfile,,FALSE,2
+16,continually check the last 10 lines of the file ‘longfile’ and print changes (Ctrl + C to exit),tail -f longfile,,FALSE,3
+16,clear the terminal window,clear,,FALSE,4
+16,list the system log files (in ubuntu check /var/log ),ls /var/log,,FALSE,5
+16,print the last 10 lines of the syslog file,tail /var/log/syslog,,FALSE,6
