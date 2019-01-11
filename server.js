@@ -183,6 +183,7 @@ function resize (container) {
 // Exit container
 function exit (stream, isRaw) {
   console.log("User called exit in container, closing")
+
   process.stdout.removeListener('resize', resize);
   process.stdin.removeAllListeners();
   //process.stdin.setRawMode(isRaw);
@@ -195,7 +196,7 @@ function exit (stream, isRaw) {
 app.post('/terminals', function (req, res) {
 
   console.log("terminals post route was hit to start new container")
-  console.log("Active containers",activeContainers);
+  
 
   let conNumber = 0;
 
@@ -210,6 +211,7 @@ app.post('/terminals', function (req, res) {
   
     containers.push(container)
     activeContainers++;
+    console.log("Active containers",activeContainers);
     conNumber = containers.length - 1;
 
     if(!container){
@@ -238,7 +240,7 @@ app.post('/terminals', function (req, res) {
           resize(container);
         });
   
-        container.wait(function(err, data) {
+      container.wait(function(err, data) {
           var isRaw = process.isRaw;
           exit(stream, isRaw);
         });
@@ -297,24 +299,28 @@ app.ws('/terminals/:pid', function (ws, req) {
         let pinger = setInterval(() => ws.ping("heartbeat"), 10000);
 
         ws.on('close', function () {
-          container.kill();
+          console.log("Calling function on ws CLOSE")
+          container.kill().catch( function(err){
+            console.log(err);
+          });
           clearInterval(pinger);
           console.log('Closed terminal ' + req.params.pid);
           // Clean things up
           //this line may be wrong need to test
           containers[container] = null;
-          activeContainers--;
+        
           
         });
 
         ws.on('error',function () {
           //cleanup resources if accidental disconnect happens
+          console.log("Calling function on ws ERROR")
           container.kill();
           clearInterval(pinger);
           console.log('Closed terminal due to WS error ' + req.params.pid);
 
           containers[container] = null;
-          activeContainers--;
+          
         });
 
     })
@@ -327,6 +333,20 @@ app.ws('/terminals/:pid', function (ws, req) {
 
 });
 
-app.listen(port, () => console.log("App listening on ",port))
+function stopContainers(){
+  //call code to stop containers which may have been left open if previous server crashed or was killed
+  docker.listContainers(function (err, containers) {
+    containers.forEach(function (containerInfo) {
+      docker.getContainer(containerInfo.Id).stop();
+    });
+  });
+}
+
+app.listen(port, () => {
+  stopContainers();
+  console.log("App listening on ",port)
+
+});
+
 
 
