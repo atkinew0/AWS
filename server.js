@@ -288,8 +288,11 @@ app.ws('/terminals/:pid', function (ws, req) {
             stream.write(msg.toString())
         })
 
+        let pinger = setInterval(() => ws.ping("heartbeat"), 10000);
+
         ws.on('close', function () {
           container.kill();
+          clearInterval(pinger);
           console.log('Closed terminal ' + req.params.pid);
           // Clean things up
           //this line may be wrong need to test
@@ -297,13 +300,12 @@ app.ws('/terminals/:pid', function (ws, req) {
           
         });
 
-        setInterval(() => ws.ping("heartbeat"), 10000);
     })
   }else{  
     console.log("Container not found")
   }
 
-  ws.send("Hi, opened websocket connection")  
+  ws.send("Opened websocket connection, type a command to begin");
 
 
 });
