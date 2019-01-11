@@ -46,7 +46,8 @@ var previousKey,
     CTRL_Q = '\u0011';
 
 var terminals = {}, logs = {};
-var containers = []
+var containers = [];
+var activeContainers = 0;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -181,17 +182,20 @@ function resize (container) {
 
 // Exit container
 function exit (stream, isRaw) {
+  console.log("User called exit in container, closing")
   process.stdout.removeListener('resize', resize);
   process.stdin.removeAllListeners();
   //process.stdin.setRawMode(isRaw);
   process.stdin.resume();
   stream.end();
+  activeContainers--;
   //process.exit();
 }
 
 app.post('/terminals', function (req, res) {
 
   console.log("terminals post route was hit to start new container")
+  console.log("Active containers",activeContainers);
 
   let conNumber = 0;
 
@@ -205,7 +209,9 @@ app.post('/terminals', function (req, res) {
     var attach_opts = {stream: true, stdin: true, stdout: true, stderr: true};
   
     containers.push(container)
+    activeContainers++;
     conNumber = containers.length - 1;
+
     if(!container){
       console.log("Container not found",container)
     }else{
@@ -245,8 +251,8 @@ app.post('/terminals', function (req, res) {
   
   }
 
-  if(containers.length > 5){
-    console.log('Err max 5 containers allowed open per node server')
+  if(activeContainers > 10){
+    console.log('Err max 10 containers allowed open per node server on demo version, wait for resources to become free')
   }else{
     docker.createContainer(optsc, handler);
 
@@ -297,7 +303,18 @@ app.ws('/terminals/:pid', function (ws, req) {
           // Clean things up
           //this line may be wrong need to test
           containers[container] = null;
+          activeContainers--;
           
+        });
+
+        ws.on('error',function () {
+          //cleanup resources if accidental disconnect happens
+          container.kill();
+          clearInterval(pinger);
+          console.log('Closed terminal due to WS error ' + req.params.pid);
+
+          containers[container] = null;
+          activeContainers--;
         });
 
     })
