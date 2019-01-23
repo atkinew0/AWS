@@ -52,7 +52,7 @@ router.post('/signup', function(req,res,next){
     }
 
     //if a with email does NOT exist create and save user record
-    const user = new User({email:email, password:password, questions:[]});
+    const user = new User({email:email, password:password, questions:[], numQuestions:0});
 
     user.save(function(err){
         if(err) {return next(err)};

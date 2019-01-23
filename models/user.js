@@ -40,7 +40,8 @@ const userSchema = new Schema({
             required:true
           }
         }
-    ]
+    ],
+    numQuestions: {type: Number, required: true}
 })
 
 

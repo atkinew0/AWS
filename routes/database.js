@@ -83,38 +83,37 @@ router.post("/api/srs", function(req,res) {
     const levelNum = parseInt(req.params.levelnum);
     
     console.log(req.body);
-  
-    let nextId = 0;
-    
-    //always get current highest question id for that level in the DB so we can add next id
-  DBEntry.find({}).sort('-id').exec(function(err, document){
-    console.log("Found the latest id doc ",document);
-    if(document.length > 0){
-      nextId = document[0].id +1;
-    }else{
-      nextId = 0;
-    }
-    console.log("Next id is",nextId);
-    console.log("creating db entry with due",req.body.due);
-    console.log("With answer2",req.body.answer2)
-  
-   DBEntry.create(
-          {
-            id: nextId,
-            prompt:req.body.prompt,
-            answer:req.body.answer,
-            answered:false,
-            answer2:"@@@@",
-            due:req.body.due,
-            daysTillDue:req.body.daysTillDue,
-            repetitions:req.body.repetitions
+
+    User.findOne(ObjectID(req.body.uid),{"numQuestions":1}, function(err, results){
+      console.log("Next question",results,results.numQuestions+1);
+
+      let nextQuestion = results.numQuestions + 1;
+
+      let newQuestion = {
+        id: nextQuestion,
+        prompt:req.body.prompt,
+        answer:req.body.answer,
+        answered:false,
+        answer2:"@@@@",
+        due:req.body.due,
+        daysTillDue:req.body.daysTillDue,
+        repetitions:req.body.repetitions
+
+      }
+
+
+      User.update({'_id': ObjectID(req.body.uid)}, { $push: { "questions": newQuestion } }, function(err, results){
+        
+
+          User.update({'_id': ObjectID(req.body.uid)}, { $set : { "numQuestions": nextQuestion }},function(err,results){
             
-          }
-        ).then(question => {
-          res.json(question);
-        });
-    
-    });
+
+            res.status(200).send();
+          });
+      })
+
+
+    })
   
     
 });
