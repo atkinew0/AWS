@@ -6,7 +6,7 @@ const User = require('../models/user');
 const jwt = require('jwt-simple');
 //const config = require('../config/keys');
 
-const config.secret = process.env.secret;
+const secret = process.env.secret;
 
 const requireAuth = passport.authenticate('jwt', {session: false});
 const requireSignin = passport.authenticate('local', {session: false});
@@ -15,7 +15,7 @@ const requireSignin = passport.authenticate('local', {session: false});
 function tokenForUser(user){
 
     const timestamp = new Date().getTime();
-    return jwt.encode({sub: user.id, iat: timestamp}, config.secret);
+    return jwt.encode({sub: user.id, iat: timestamp}, secret);
 }
     
     //NOTE THIS IS HOW TO USE MIDDLEWARE TO REQUIRE JSON WEB TOKEN AUTH ON A ROUTE
@@ -30,7 +30,7 @@ router.post('/signin', requireSignin, function(req,res,next){
 
 router.get('/userid', requireAuth, function(req,res,next){
 
-    let userId = jwt.decode(req.headers.authorization, config.secret);
+    let userId = jwt.decode(req.headers.authorization, secret);
 
     res.json({userId: userId.sub});
 

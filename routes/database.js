@@ -4,7 +4,7 @@ const passport = require('passport');
 const ObjectID = require('mongodb').ObjectID;
 
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
+//const keys = require('../config/keys');
 const Question = require('../models/level');
 const DBEntry = require('../models/srs');
 const User = require('../models/user');
@@ -13,7 +13,7 @@ const { Schema } = mongoose;
 const requireAuth = passport.authenticate('jwt', {session: false});
 
 
-mongoose.connect(keys.mongoCredentials || process.env.mongoCredentials);
+mongoose.connect(process.env.mongoCredentials);
 
 
 router.get("/api/level/:levelnum", requireAuth, function(req,res) {
