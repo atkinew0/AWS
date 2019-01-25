@@ -15,7 +15,8 @@ const requireAuth = passport.authenticate('jwt', {session: false});
 console.log("Here in db env var mongocred is",process.env.mongoCredentials)
 
 mongoose.connect(process.env.mongoCredentials, function(error){
-  console.log("Mongoose connection error: \n", error);
+  if(err)
+    console.log("Mongoose connection error: \n", error);
 });
 
 

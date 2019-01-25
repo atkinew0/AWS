@@ -5,6 +5,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
 
+console.log("secret here is",process.env.secret)
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
