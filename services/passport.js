@@ -8,7 +8,7 @@ const LocalStrategy = require('passport-local');
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-    secretOrKey: config.secret
+    secretOrKey: config.secret || process.env.secret
 };
 
 const localOptions = {
