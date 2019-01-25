@@ -22,6 +22,7 @@ function tokenForUser(user){
     // })
 
 router.post('/signin', requireSignin, function(req,res,next){
+    
     res.send({token:tokenForUser(req.user)});
 });
 
