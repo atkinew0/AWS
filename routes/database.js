@@ -13,7 +13,9 @@ const { Schema } = mongoose;
 const requireAuth = passport.authenticate('jwt', {session: false});
 
 
-mongoose.connect(process.env.mongoCredentials);
+mongoose.connect(process.env.mongoCredentials, function(error){
+  console.log(error);
+});
 
 
 router.get("/api/level/:levelnum", requireAuth, function(req,res) {
