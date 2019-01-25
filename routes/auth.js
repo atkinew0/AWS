@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const jwt = require('jwt-simple');
-const config = require('../config/keys');
+//const config = require('../config/keys');
 
 const requireAuth = passport.authenticate('jwt', {session: false});
 const requireSignin = passport.authenticate('local', {session: false});
