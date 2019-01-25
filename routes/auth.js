@@ -24,6 +24,8 @@ function tokenForUser(user){
     // })
 
 router.post('/signin', requireSignin, function(req,res,next){
+
+    console.log("Signin attempt", req.user)
     
     res.send({token:tokenForUser(req.user)});
 });
