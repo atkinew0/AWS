@@ -21,7 +21,7 @@ if (!stats.isSocket()) {
 var docker = new Docker({ socketPath: socket });
 var optsc = {
   'Hostname': '',
-  'User': '',
+  'User': 'user',
   'AttachStdin': true,
   'AttachStdout': true,
   'AttachStderr': true,
@@ -31,7 +31,7 @@ var optsc = {
   'Env': null,
   'Cmd': ['bash'],
   'Dns': ['8.8.8.8', '8.8.4.4'],
-  'Image': 'ubuntu',
+  'Image': 'customshell',
   'Volumes': {},
   'VolumesFrom': []
 };
