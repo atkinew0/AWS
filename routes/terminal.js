@@ -117,6 +117,11 @@ router.post('/terminals', requireAuth, function (req, res) {
     
     if(container){
       container.attach(attach_opts, (err, stream) => {
+
+         setTimeout(() => {
+           stream.write("stty rows 36\r");
+           stream.write("clear\r");
+          },500);
   
           stream.on('data',(chunk)=>{
               //console.log("stream got data, sending to ws",chunk.toString())
@@ -132,7 +137,7 @@ router.post('/terminals', requireAuth, function (req, res) {
           let pinger = setInterval(() => ws.ping("heartbeat"), 10000);
   
           ws.on('close', function () {
-            console.log("Calling function on ws CLOSE")
+
             container.kill().catch( function(err){
               console.log(err);
             });
@@ -147,7 +152,7 @@ router.post('/terminals', requireAuth, function (req, res) {
   
           ws.on('error',function () {
             //cleanup resources if accidental disconnect happens
-            console.log("Calling function on ws ERROR")
+            console.log("Calling function on ws ERROR");
             container.kill();
             clearInterval(pinger);
             console.log('Closed terminal due to WS error ' + req.params.pid);
@@ -161,7 +166,7 @@ router.post('/terminals', requireAuth, function (req, res) {
       console.log("Container not found")
     }
   
-    ws.send("Opened websocket connection, type a command to begin\n\n");
+    ws.send("Opened websocket connection, type a command to begin\r");
   
   
   });
