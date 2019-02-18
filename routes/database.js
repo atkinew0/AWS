@@ -30,6 +30,24 @@ router.get("/api/level/:levelnum", requireAuth, function(req,res) {
     });
     
 });
+
+router.get('/api/srs/all', requireAuth, function(req,res){
+
+  let { uid } = req.query;
+
+  User.findOne(ObjectID(uid), function(err, results){
+    if( err)
+      console.log(err)
+
+    let now = new Date().getTime();
+
+
+    res.send(results.questions);
+
+  })
+
+
+})
   
 router.get('/api/srs', requireAuth, function(req,res){
     //get all questions from srs collection then filter on due times already passed
@@ -49,18 +67,6 @@ router.get('/api/srs', requireAuth, function(req,res){
 
       })
   
-    // DBEntry.find({}).exec(function(err,document){
-  
-    //   let d = new Date();
-    //   let now = d.getTime();
-  
-    //   let questionsDue = document.filter(elem => {
-    //     return elem.due < now;
-    //   })
-      
-    //   res.send(questionsDue);
-    // });
-  
 })
   
 router.put("/api/srs",function(req,res){
@@ -74,11 +80,6 @@ router.put("/api/srs",function(req,res){
       .catch(err => console.log(err));
     }
       
-  
-    // DBEntry.update({id:req.body.id},
-    //   { $set: {due:req.body.due, daysTillDue:req.body.daysTillDue, repetitions:req.body.repetitions}})
-    //   .catch(err => console.log(err));
-    //   }
   
 );
 

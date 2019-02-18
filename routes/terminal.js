@@ -43,7 +43,7 @@ var activeContainers = 0;
 
 router.post('/terminals', requireAuth, function (req, res) {
   
-    console.log("terminals post route was hit to start new container")
+    console.log("Starting new container")
     
     let conNumber = 0;
 

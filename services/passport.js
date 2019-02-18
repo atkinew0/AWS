@@ -40,7 +40,6 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 //create jwt strategy
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done){
 
-    console.log("Running JWT strategy")
 
     User.findById(payload.sub, function(err, user){
         if(err) return done(err, false);
