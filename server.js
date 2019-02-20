@@ -11,6 +11,8 @@ const cors = require('cors');
 const { Schema } = mongoose;
 const Docker = require('dockerode');
 
+const docker = new Docker();
+
 const port = process.env.PORT || 8081;
 
 const app = express();
@@ -39,6 +41,18 @@ app.get("/", function(req,res){
 app.listen(port, () => {
   //stopContainers();
   console.log("App listening on ",port)
+
+  //When server starts, force stop all old containers which may have been left running if
+  //server shuts down unexpectedly. Be careful running with other docker applications.
+  docker.listContainers(function (err, containers) {
+    containers.forEach(function (containerInfo) {
+      docker.getContainer(containerInfo.Id).stop(function(){
+        console.log("Stopped container", containerInfo.Id)
+      });
+        
+    });
+  });
+  
 
 });
 

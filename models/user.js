@@ -41,7 +41,8 @@ const userSchema = new Schema({
           }
         }
     ],
-    numQuestions: {type: Number, required: true}
+    numQuestions: {type: Number, required: true},
+    levelCompleted: {type: Number, required: true}
 })
 
 

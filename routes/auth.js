@@ -8,7 +8,6 @@ const jwt = require('jwt-simple');
 
 
 const secret = process.env.secret;
-console.log("secret here",secret)
 
 const requireAuth = passport.authenticate('jwt', {session: false});
 const requireSignin = passport.authenticate('local', {session: false});
