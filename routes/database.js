@@ -123,6 +123,33 @@ router.post("/api/srs", function(req,res) {
   
     
 });
+
+router.post('/api/srs/delete',requireAuth, function(req,res){
+
+  //delete questions from users db entry based on body params
+  console.log("Ht delete route",req.body, req.body.deleteItems)
+  
+  console.log("delete items is",req.body.deleteItems, "and type is", typeof req.body.deleteItems);
+
+  // User.find({'_id': ObjectID(req.body.user)}, function(err,results){
+  //   console.log(results);
+
+  //   console.log(err)
+  // })
+
+
+
+  User.updateOne({'_id': ObjectID(req.body.user)},{$pull: { questions: { id : {$in : req.body.deleteItems  } }}} ,function(err,results){
+    if(err)
+      console.log(err);
+    else{
+      console.log(results)
+    }
+
+    res.status(200).send();
+  } )
+
+});
   
   
 
