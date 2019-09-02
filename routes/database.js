@@ -89,31 +89,49 @@ router.get('/api/srs', requireAuth, function(req,res){
         if( err)
           console.log(err)
 
-        let now = new Date().getTime();
+        // let now = new Date().getTime();
 
-        let questionsDue = results.questions.filter(elem => {
-          return elem.due < now;
-        })
+        // let questionsDue = results.questions.filter(elem => {
+        //   return elem.due < now;
+        // })
+
+        let questionsDue = results.questions;
 
         res.send(questionsDue);
 
       })
   
 })
-  
-router.put("/api/srs",function(req,res){
-    //route used to update due times in SRS database based on correctly or incorrectly answered questions
-    console.log("The req body in put route",req.body)
-    User.updateMany(
-     { "_id": ObjectID(req.body.uid),
-      "questions.id": req.body.id
+
+router.put("/api/srs", function(req, res){
+
+  console.log("Updating questions on database with",req.body)
+
+  User.updateOne(
+    { "_id": ObjectID(req.body.uid),
     },
-    { $set: {"questions.$.due":req.body.due, "questions.$.daysTillDue" :req.body.daysTillDue, "questions.$.repetitions":req.body.repetitions}})
-      .catch(err => console.log(err));
+    {
+      $set: { "questions": req.body.questions}
     }
+
+  ).catch(err => console.log(err))
+
+  res.status(200).send();
+})
+  
+// router.put("/api/srs",function(req,res){
+//     //route used to update due times in SRS database based on correctly or incorrectly answered questions
+//     console.log("The req body in put route",req.body)
+//     User.updateMany(
+//      { "_id": ObjectID(req.body.uid),
+//       "questions.id": req.body.id
+//     },
+//     { $set: {"questions.$.due":req.body.due, "questions.$.daysTillDue" :req.body.daysTillDue, "questions.$.repetitions":req.body.repetitions}})
+//       .catch(err => console.log(err));
+//     }
       
   
-);
+// );
 
 
 router.post("/api/srs", function(req,res) {
