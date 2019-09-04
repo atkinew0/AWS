@@ -82,22 +82,30 @@ router.get('/api/srs/all', requireAuth, function(req,res){
 })
   
 router.get('/api/srs', requireAuth, function(req,res){
-    //get all questions from srs collection then filter on due times already passed
+    //get all questions from srs collection
      let uid = req.query.uid;
      
       User.findOne(ObjectID(uid), function(err, results){
         if( err)
           console.log(err)
 
-        // let now = new Date().getTime();
+        let now = new Date().getTime();
 
-        // let questionsDue = results.questions.filter(elem => {
-        //   return elem.due < now;
-        // })
+        let due = results.questions.filter(elem => {
+           return elem.due < now;
+       })
 
-        let questionsDue = results.questions;
+       let noneDue = due.length === 0 ? true : false;
+        
 
-        res.send(questionsDue);
+        let questions = results.questions;
+
+       let response = {
+         questions,
+         noneDue
+       }
+
+        res.send(response);
 
       })
   
