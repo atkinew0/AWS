@@ -16,3 +16,4 @@ RUN apt-get install -y git curl netcat iputils-ping iproute2
 COPY copy/* ./
 USER user
 WORKDIR /home
+COPY levels/levels /home/user

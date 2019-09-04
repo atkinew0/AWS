@@ -99,8 +99,8 @@ router.post('/terminals', requireAuth, function (req, res) {
     
     }
   
-    if(activeContainers > 10){
-      console.log('Err max 10 containers allowed open per node server on demo version, wait for resources to become free')
+    if(activeContainers > 20){
+      console.log('Err max 20 containers allowed open per server on demo version, wait for resources to become free')
     }else{
       docker.createContainer(optsc, handler);
   
